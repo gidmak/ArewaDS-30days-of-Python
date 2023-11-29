@@ -1,4 +1,4 @@
-#Day 1 of 30 days of python
+# Day 1 of 30 days of python
 
 # Addition
 print(3 + 4) 
@@ -32,7 +32,6 @@ print("Nigeria")
 print("I am enjoying 30 days of python")
 
 # Checking data types
-
 # Int
 print(type(10))
 
