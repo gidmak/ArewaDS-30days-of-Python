@@ -99,7 +99,7 @@ challenge = 'You cannot end a sentence with because because because is a conjunc
 sub_string = 'because'
 print(challenge.rindex(sub_string))
 
-Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+# Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 challenge = 'You cannot end a sentence with because because because is a conjunction'
 print(challenge[30:55])
 

@@ -13,7 +13,7 @@ print(4 * 3)
 print(4 % 3)
 
 # Exponential
-print( 4 ** 3)
+print(4 ** 3)
 
 # Floor division
 print(4 // 3)
