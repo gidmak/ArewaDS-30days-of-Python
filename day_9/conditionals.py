@@ -33,7 +33,7 @@ elif a < b:
 else:
     print(f"{a} is equal to {b}")
 
-Write a code which gives grade to students according to theirs scores:
+# Write a code which gives grade to students according to theirs scores:
 
 80-100, A
 70-89, B
@@ -41,7 +41,7 @@ Write a code which gives grade to students according to theirs scores:
 50-59, D
 0-49, F
 
-Accept the score through user input
+# Accept the score through user input
 stu_score = input("Enter your score: ")
 try:
     score = int(stu_score)
@@ -94,3 +94,34 @@ else:
     fruits.append(input_fruits)
     print(f"{input_fruits} added to list successfully", fruits)
 
+# Here we have a person dictionary. Feel free to modify it!
+person={
+    'first_name': 'Gideon',
+    'last_name': 'Markus',
+    'age': 34,
+    'country': 'Nigeria',
+    'is_marred': True,
+    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address': {
+        'street': 'Space street',
+        'zipcode': '02210'
+    }
+}
+
+#  Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
+if "skills" in person:
+    print(person["skills"][2])
+
+#  Check if the person dictionary has skills key, if so check if the person has 'Python' skill and print out the result.
+if "skills" in person:
+    if "Python" in person["skills"]:
+        print("The person has python skills")
+    else:
+        print("This person does not have python skills.")
+
+#  If the person is married and if he lives in Finland, print the information in the following format:
+# Asabeneh Yetayeh lives in Finland. He is married.
+if person["is_marred"] is True:
+    print(f"{person["first_name"]} {person["last_name"]} lives in {person["country"]} and he is married")
+else:
+    print("He is single")
