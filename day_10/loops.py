@@ -1,6 +1,7 @@
 # Day 10 of 30 days of Python
 
 # Iterate 0 to 10 using for loop, do the same using while loop.
+
 # Using for loop to iterate from 0 to 10
 for i in range(11):
     print(i)
@@ -91,3 +92,22 @@ while i < 100:
     i += 1
     if i % 2 == 1:
         print(i)
+
+# # Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+sum_of_numbers = 0
+for i in range(101):
+    sum_of_numbers += i
+    i += 1
+print("The sum of the numbers is", sum_of_numbers) 
+
+# Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+sum_of_odd_numbers = 0
+sum_of_even_numbers = 0
+for i in range(101):
+    if i % 2 == 0:
+        sum_of_even_numbers += i
+    else:
+        sum_of_odd_numbers += i
+    i += 1
+print("Sum of even numbers is ", sum_of_even_numbers)
+print("Sum of odd numbers is ", sum_of_odd_numbers)
