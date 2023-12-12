@@ -1,4 +1,4 @@
-#Day 11 of 30 days of python
+# Day 11 of 30 days of python
 
 # Declare a function add_two_numbers. It takes two parameters and it returns a sum.
 def add_two_numbers(x, y):
@@ -248,3 +248,124 @@ number_to_sum = 10
 total_sum_of_even = sum_of_even(number_to_sum)
 
 print(f"The sum of even numbers from 1 to {number_to_sum} is: {total_sum_of_even}")
+
+# Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+def evens_and_odds(number):
+    # Initialize counters for even and odd digits
+    even_count = 0
+    odd_count = 0
+
+    # Iterate over each digit in the number
+    for digit in range(number + 1):
+        if digit % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+
+    return even_count, odd_count
+
+# Example usage:
+input_number = 100
+even_count, odd_count = evens_and_odds(input_number)
+
+print(f"Number of even digits in {input_number}: {even_count}")
+print(f"Number of odd digits in {input_number}: {odd_count}")
+
+# Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(number):
+    # Check if the number is non-negative
+    if number < 0:
+        return "Factorial is undefined for negative numbers."
+
+    # Initialize the result to 1
+    result = 1
+
+    # Calculate the factorial
+    for i in range(1, number + 1):
+        result *= i
+
+    return result
+
+# Example usage:
+input_number = 5
+factorial_result = factorial(input_number)
+
+print(f"The factorial of {input_number} is: {factorial_result}")
+
+# Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(data):
+    # Check if the data is empty based on its type
+    if data is None:
+        return True
+    elif isinstance(data, (str, list, tuple, dict, set)):
+        return not bool(data)
+    else:
+        return False
+
+# Example usage:
+empty_string = ""
+non_empty_list = [1, 2, 3]
+
+print(f"Is the string empty? {is_empty(empty_string)}")  # Output: True
+print(f"Is the list empty? {is_empty(non_empty_list)}")  # Output: False
+
+# Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+# Mean
+def calculate_mean(data):
+    if not data:
+        return None
+    return sum(data) / len(data)
+
+# Median
+def calculate_median(data):
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    if n % 2 == 0:
+        mid1 = sorted_data[n // 2 - 1]
+        mid2 = sorted_data[n // 2]
+        return (mid1 + mid2) / 2
+    else:
+        return sorted_data[n // 2]
+
+# Mode
+from collections import Counter
+
+def calculate_mode(data):
+    if not data:
+        return None
+    counts = Counter(data)
+    max_count = max(counts.values())
+    mode = [key for key, value in counts.items() if value == max_count]
+    return mode
+
+# Range
+def calculate_range(data):
+    if not data:
+        return None
+    return max(data) - min(data)
+
+# Variance
+def calculate_variance(data):
+    if not data or len(data) == 1:
+        return None
+    mean = calculate_mean(data)
+    squared_diff = [(x - mean) ** 2 for x in data]
+    variance = sum(squared_diff) / (len(data) - 1)
+    return variance
+
+# Standard deviation
+import math
+
+def calculate_std(data):
+    variance = calculate_variance(data)
+    if variance is None:
+        return None
+    return math.sqrt(variance)
+
+data = [2, 4, 4, 4, 5, 5, 7, 9]
+print("Mean:", calculate_mean(data))
+print("Median:", calculate_median(data))
+print("Mode:", calculate_mode(data))
+print("Range:", calculate_range(data))
+print("Variance:", calculate_variance(data))
+print("Standard Deviation:", calculate_std(data))
